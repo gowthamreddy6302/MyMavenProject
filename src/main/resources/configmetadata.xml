@@ -1,0 +1,52 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Your beans and configurations go here -->
+    <bean name = "customer" class = "org.example.NewCustomer">
+        <property name = "name">
+            <value>A.Gowtham Reddy</value>
+        </property>
+        <property name = "contact">
+            <value>2678683</value>
+        </property>
+        <property name = "address">
+            <list>
+                <value>Nellore</value>
+                <value>Bangalore</value>
+                <value>Chennai</value>
+            </list>
+        </property>
+        <property name="address1">
+            <set>
+                <value>Bangalore-Karnataka</value>
+                <value>Chennai-TamilNadu</value>
+                <value>Hyderabad-Telangana</value>
+                <value>Hyderabad-Telangana</value>
+            </set>
+        </property>
+        <property name="address2">
+            <map>
+                <entry key="Nellore" value="Andhra-pradesh"/>
+                <entry key="Vizag" value="Andhra-Pradesh" />
+                <entry key="Mumbai" value="Maharashtra"/>
+            </map>
+        </property>
+    </bean>
+    <bean name="ord" class="org.example.NewOrder">
+        <property name="productId">
+            <value>agr@6302</value>
+        </property>
+        <property name="productName">
+            <value>Mac-Book</value>
+        </property>
+        <property name="customer">
+            <ref bean="customer"/>
+        </property>
+    </bean>
+</beans>
